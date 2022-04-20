@@ -1,0 +1,906 @@
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.hover-opacity {
+    transition: opacity .5s;
+}
+
+.hover-opacity:hover {
+    opacity: 0.7;
+}
+
+.ltr-effect,
+.tb-effect {
+    position: relative;
+}
+
+.ltr-effect:after,
+.tb-effect:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgb(63, 62, 100);
+    z-index: -1;
+}
+
+.ltr-effect:after {
+    width: 0;
+    transition: width 0.5s;
+}
+
+.tb-effect:after {
+    height: 0;
+    transition: height 0.5s;
+}
+
+.ltr-effect:hover:after {
+    width: 100%;
+}
+
+.tb-effect:hover:after {
+    height: 100%;
+}
+
+
+/* 2-General styles */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Varela Round', sans-serif;
+}
+
+.clear {
+    clear: both;
+}
+
+.pd-y {
+    padding: 120px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-header .section-title {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+.section-header .line {
+    display: block;
+    height: 2px;
+    width: 100px;
+    background-color: #6195ff;
+    margin-bottom: 10px;
+    margin: 0px auto 70px auto;
+}
+
+.header-content {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* to solve flot problem*/
+
+/* 3-sections styles */
+
+
+/* Heder section */
+
+.header {
+    background-color: rgb(58, 58, 88);
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.header .logo {
+    height: 20%;
+    font-size: 3rem;
+    font-weight: bold;
+    float: left;
+    padding-top: 5px;
+    color: #fff;
+    padding-left: 40px;
+}
+
+.header .nav {
+    display: flex;
+    float: left;
+    width: 70%;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+.header .nav li {
+    display: inline-block;
+    margin-right: 30px;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header .nav li a {
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 30px 10px;
+}
+
+.header .nav li a:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: #6195ff;
+    transition: width 0.5s;
+    margin-top: 3px;
+}
+
+.header .nav li a:hover:after {
+    width: 100%;
+}
+
+#logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 30px;
+}
+
+/* Home section */
+
+.home {
+    height: 100vh;
+    background-image: url(img/nav_back2.gif);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.home .title {
+    color: #aac9f3;
+    text-shadow: 2px 2px 5px #122847;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.home-contant {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-top: 15%;
+}
+
+.home-desc {
+    margin: 20px 0;
+    color: #aac9f3;
+    text-shadow: 2px 2px 5px #122847;
+    letter-spacing: 2px;
+    line-height: 1.5;
+}
+
+.home .btn {
+
+    padding: 15px;
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+    transform: rotate(-45deg);
+    font-size: 18px;
+}
+
+.home-btn_place {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.home .btn-start {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.home .btn-learn {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/* About section */
+
+
+.about-contant {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.about-item {
+    width: 30%;
+    float: left;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    padding: 40px 20px;
+
+}
+
+.about-item-info3 {
+    display: none;
+    margin-top: 5%;
+    width: 100%;
+    float: left;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    padding: 40px 20px;
+
+}
+
+
+.about-item:hover .about-item-title {
+    color: #fff;
+}
+
+.about-item .icon {
+    margin: 10px;
+    color: #6195ff;
+}
+
+.about-item-title {
+
+    margin-bottom: 10px;
+    transition: color 0.5s;
+}
+
+.about-item-desc {
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #999;
+}
+
+.about-item-link {
+    color: #6195ff;
+}
+
+#read_more3:checked~.about-item-info3 {
+    display: unset;
+}
+
+/*display*/
+
+.display {
+    position: fixed;
+    padding: 20px;
+    top: 15%;
+    left: 5%;
+    bottom: 5%;
+    z-index: 100;
+    width: 90vw;
+    overflow: hidden;
+    background-color: rgb(63, 62, 100);
+}
+
+.mini_scrollbar {
+    float: left;
+    background: #F5F5F5;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+}
+
+#style-bare::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #071820;
+}
+
+#style-bare::-webkit-scrollbar {
+    width: 30px;
+    background-color: #071820;
+}
+
+#style-bare::-webkit-scrollbar-thumb {
+    background-image: url(img/scrall.png);
+    background-size: cover;
+    background-position: bottom;
+}
+
+
+
+/* work section */
+
+.working-containt {
+    overflow: hidden;
+    display: inline-block;
+}
+
+.work_item {
+    width: 30%;
+}
+
+.working-item {
+
+    margin-bottom: 20px;
+    border: 1px solid #e8e8e8;
+    padding: 20px 15px 30px 60px;
+    position: relative;
+}
+
+.working-item .icon {
+    position: absolute;
+    left: 15px;
+    top: 40px;
+    color: #6195ff;
+}
+
+.working-item-title {
+    margin: 15px;
+
+    transition: color 0.5s;
+}
+
+.working-item-desc {
+    margin: 15px;
+
+    line-height: 1.6;
+    color: #999;
+}
+
+.working-item:hover .working-item-title {
+    color: #fff;
+}
+
+.button {
+    width: 30%;
+    list-style: none;
+    cursor: pointer;
+}
+
+.halfw {
+    width: 30%;
+}
+
+.working-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
+
+.box {
+    background-color: rgb(63, 62, 100);
+    color: #fff;
+    display: none;
+
+}
+
+/* why-section */
+
+.why {
+    background-color: #efefef;
+}
+
+.why-item {
+    width: 50%;
+    float: left;
+    margin-top: 100px;
+}
+
+.why_p {
+    margin: 5%;
+}
+
+.why-item .section-header {
+    text-align: left;
+}
+
+.why-item .section-header .line {
+    margin: 0 0 50px 0;
+}
+
+.why-item {
+    padding-right: 20px;
+    color: #999;
+    line-height: 1.4;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.why-list {
+    list-style: none;
+}
+
+.why-list li i {
+    border: 1px solid #6195ff;
+    color: #6195ff;
+    padding: 11px 4px;
+    border-radius: 50%;
+}
+
+.why-list li {
+    display: flex;
+    margin-bottom: 2rem;
+    color: #999;
+}
+
+.why-desc {
+    margin-bottom: 2rem;
+}
+
+.why-item img {
+    width: 100%;
+}
+
+.why-bollets {
+    list-style: none;
+    text-align: center;
+}
+
+.why-bollets li {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: #e8e8e8;
+    margin: 10px 5px;
+    border-radius: 50%;
+
+
+}
+
+.why-bollets li.active {
+    background-color: #6195ff;
+}
+
+.why-bollets li:hover {
+    background: #6195ff;
+}
+
+/* numbers-section */
+.numbers {
+    position: relative;
+    background-image: url(img/schieferplatten-oelen.jpeg);
+    height: 300px;
+    display: flex;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.numbers-items {
+    overflow: hidden;
+    width: 80%;
+}
+
+.number-item {
+    width: 25%;
+    float: left;
+    text-align: center;
+
+
+}
+
+.number-item .icon {
+    color: #6195ff;
+    margin-bottom: 15px;
+}
+
+.number-item-title {
+    font-weight: bold;
+    font-size: 30px;
+    color: #fff;
+}
+
+.number-item-text {
+    color: #fff;
+}
+
+/* pricing-section */
+
+.pricing-plans {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pricing-item {
+    width: 30%;
+    float: left;
+    padding: 20px 20px;
+    border: 1px solid #e8e8e8;
+    text-align: center;
+}
+
+.pricing-item.mg {
+    margin: 0 5%;
+}
+
+.pricing-item-text {
+    text-transform: uppercase;
+    font-size: 17px;
+    color: #999;
+    transition: color 0.5s;
+}
+
+.pricing-item-permonth {
+    width: 100px;
+    height: 100px;
+    padding: 30px 0;
+    transition: color 0.5s;
+    margin: 20px auto;
+    border: 2px solid #6195ff;
+    border-radius: 50%;
+
+}
+
+.pricing-item-permonth .doller {
+    font-size: 30px;
+}
+
+.pricing-item-permonth .month {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.pricing-list {
+    list-style: none;
+}
+
+.pricing-list li {
+    color: #999;
+    line-height: 1.8;
+}
+
+.purchase {
+    background: none;
+    border: 0;
+    display: block;
+    width: 140px;
+    border: 2px solid #7ba7ff;
+    color: #7ba7ff;
+    margin: 15px auto 0 auto;
+}
+
+.pricing-item:hover .pricing-item-permonth {
+    color: #fff;
+}
+
+.pricing-item:hover .pricing-item-text {
+    color: #7ba7ff;
+}
+
+/* footer-section */
+
+.logo {
+    font-size: 40px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.footer {
+    background: #1c1d21;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.footer-links {
+    list-style: none;
+    margin: 30px 0;
+}
+
+.footer-links li {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #7ba7ff;
+    color: #FFF;
+    margin: 0 5px;
+    border-radius: 50%;
+}
+
+.footer-links li a i {
+    line-height: 50px;
+    color: rgb(218, 225, 248);
+}
+
+.footer .copy {
+    color: #999;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.contact {
+    position: relative;
+    background-image: url(img/schieferplatten-oelen.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.contact-items {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 100%;
+    padding: 100px;
+}
+
+.contact-item {
+    width: 30%;
+    text-align: center;
+    display: inline-block;
+}
+
+.contact-item .icon {
+    color: #6195ff;
+    margin-bottom: 15px;
+}
+
+.contact-item-title {
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+}
+
+.contact-item-text {
+    color: #fff;
+}
+
+/* scrollbar */
+.scrollbar {
+    position: fixed;
+    margin-top: 80px;
+    height: 92vh;
+    width: 100vw;
+    background: #F5F5F5;
+    overflow-y: scroll;
+}
+
+.force-overflow {
+    min-height: 450px;
+}
+
+#style-1::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #071820;
+}
+
+#style-1::-webkit-scrollbar {
+    width: 30px;
+    background-color: #071820;
+}
+
+#style-1::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-image: url(img/scrall.png);
+    background-size: cover;
+    background-position: bottom;
+}
+
+
+/* text select */
+.german {
+    display: none;
+}
+
+.language_icon {
+    width: 1rem;
+}
+
+#language {
+    width: 0.4rem;
+    margin-top: 0.5%;
+}
+
+/*media nav*/
+
+.media-nav-bar {
+    display: none;
+    z-index: 100;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-evenly;
+}
+
+.media-nav-bar a {
+    display: flex;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding-top: 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.imcon {
+    width: 2rem;
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 900px) {
+
+    /*nav*/
+    .header {
+        display: none;
+    }
+
+    .scrollbar {
+        margin-top: 0px;
+        height: 100vh;
+        width: 100vw;
+        overflow-y: scroll;
+    }
+
+    #style-1::-webkit-scrollbar {
+        width: 2%;
+        background-color: #071820;
+    }
+
+    .media-nav-bar {
+        display: flex;
+    }
+
+    /*about*/
+    .about-item-desc {
+        display: none;
+    }
+
+    .about-item{
+        flex-direction: column;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;}
+
+    .about-item-link {
+        display: none;
+    }
+
+    /*working*/
+    .working-item-desc {
+        display: none;
+    }
+
+    .container {
+        justify-content: space-around;
+    }
+
+    .button {
+        width: 30%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .working-item .icon {
+        position: unset;
+        left: 10;
+        top: 0;
+    }
+
+    .working-item {
+        padding: 0;
+        display: flex;
+        width: 100%;
+        padding: 40px 20px;
+        align-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .working-item-title {
+        margin-top: 3%;
+        margin-bottom: 3%;
+        text-align: center;
+    }
+
+    /*why me*/
+
+    .why-item {
+        width: 80%;
+    }
+
+    .numbers-items {
+        width: 100%;
+        padding: 0;
+    }
+
+    /*pricing*/
+    .pricing-item-permonth {
+        width: unset;
+        height: unset;
+        padding: 30px 0;
+        transition: unset;
+        margin: unset;
+        border: unset;
+        border-radius: unset;
+    }
+
+    .pricing-list {
+        display: none;
+    }
+
+    .purchase {
+        width: unset;
+    }
+
+    .pricing-plans {
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .pricing-item {
+        float: unset;
+        padding: unset;
+    }
+
+    .pricing-item-text {
+        font-size: 13px;
+    }
+
+    /*contact*/
+    .contact-items {
+        width: 100%;
+        padding: 0;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+
+    .number-item-text {
+        width: 100%;
+    }
+
+}
